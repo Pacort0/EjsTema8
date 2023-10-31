@@ -5,8 +5,16 @@
         public MainPage()
         {
             InitializeComponent();
-            FrameExterno.WidthRequest = StackPadre.Width;
-            FrameExterno.HeightRequest = StackPadre.Height;
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new FlexLayout());
+        }
+
+        private async void Button_2_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AbsoluteLayout1());
         }
     }
 }
