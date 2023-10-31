@@ -6,9 +6,9 @@
         <Border Stroke="Purple" Padding="25" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" StrokeThickness="20">
 
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
-                <Button Text="FlexLayout" Padding="10" BorderColor="Black" BorderWidth="5" WidthRequest="100" Margin="5" Clicked="Button_Clicked"></Button>
-                <Button Text="AbsoluteLayout" WidthRequest="100" Margin="5" Clicked="Button_2_Clicked"></Button>
-                <Button Text="Boton3" WidthRequest="100" Margin="5"></Button>
+                <Button x:Name="Button" Text="FlexLayout" Padding="10" BorderColor="Black" BorderWidth="5" WidthRequest="150" Margin="5" Clicked="Button_Clicked"></Button>
+                <Button x:Name="Button_2" Text="AbsoluteLayout" WidthRequest="150" Margin="5" Clicked="Button_2_Clicked"></Button>
+                <Button x:Name="Button_3" Text="VariosLayouts" WidthRequest="150" Margin="5" Clicked="Button_3_Clicked"></Button>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Name: " Margin="0,0,15,0"></Label>
                     <Entry WidthRequest="200"></Entry>

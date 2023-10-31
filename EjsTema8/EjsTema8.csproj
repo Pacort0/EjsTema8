@@ -53,10 +53,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="VariosLayouts.xaml.cs">
+	    <DependentUpon>VariosLayouts.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="AbsoluteLayout1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="FlexLayout.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="VariosLayouts.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

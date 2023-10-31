@@ -16,5 +16,10 @@
         {
             await Navigation.PushAsync(new AbsoluteLayout1());
         }
+
+        private async void Button_3_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new VariosLayouts());
+        }
     }
 }
