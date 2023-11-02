@@ -2,6 +2,27 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EjsTema8.VariosLayouts"
+<<<<<<< HEAD
+             Title="VariosLayouts"
+>
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="10" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+        <Frame BorderColor="Black" Margin="5">
+            <Label Text="Este label está arriba del todo"></Label>
+        </Frame>
+        <Frame BorderColor="Black" Margin="5">
+            <Label Text="Este label está arriba del todo"></Label>
+        </Frame>
+        <Frame BorderColor="Black" Margin="5" >
+            <AbsoluteLayout AbsoluteLayout.LayoutFlags="SizeProportional">
+                <BoxView Color="Blue" AbsoluteLayout.LayoutBounds="0,0,100,100" ></BoxView>
+                <BoxView Color="Green" AbsoluteLayout.LayoutBounds="0,120,100,100"></BoxView>
+                <BoxView Color="Yellow" AbsoluteLayout.LayoutBounds="120,0,100,100"></BoxView>
+                <BoxView Color="Transparent" AbsoluteLayout.LayoutBounds="600, 0, AutoSize, AutoSize">
+                </BoxView>
+            </AbsoluteLayout>
+        </Frame>
+    </StackLayout>
+=======
              Title="VariosLayouts">
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -18,6 +39,7 @@
                 <Label Text="Fila de abajo"/>
             </Border>
         </VerticalStackLayout>
+>>>>>>> 7ec8443be281ab8a19898672d468cdf9bdf45cc2
 
         <Border Stroke="Black" StrokeThickness="3" Margin="5" Grid.Row="1">
             <ScrollView>
