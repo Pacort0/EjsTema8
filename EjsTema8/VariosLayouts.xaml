@@ -2,27 +2,66 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EjsTema8.VariosLayouts"
-             Title="VariosLayouts"
->
-    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="10" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
-        <Frame BorderColor="Black" Margin="5">
-            <Label Text="Este label está arriba del todo"></Label>
-        </Frame>
-        <Frame BorderColor="Black" Margin="5">
-            <Label Text="Este label está arriba del todo"></Label>
-        </Frame>
-        <Frame BorderColor="Black" Margin="5" >
-            <AbsoluteLayout>
-                <BoxView Color="Blue" AbsoluteLayout.LayoutBounds="0,0,100,100"></BoxView>
-                <BoxView Color="Green" AbsoluteLayout.LayoutBounds="0,120,100,100"></BoxView>
-                <BoxView Color="Yellow" AbsoluteLayout.LayoutBounds="120,0,100,100"></BoxView>
-                <Frame BorderColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="550,0">
-                    <StackLayout >
+             Title="VariosLayouts">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
 
-                    </StackLayout>
-                </Frame>
-            </AbsoluteLayout>
-        </Frame>
-    </StackLayout>
+        <VerticalStackLayout Grid.Row="0" Spacing="10">
+            <Border Stroke="Black" StrokeThickness="3">
+                <Label Text="Fila de arriba"/>
+            </Border>
+            <Border Stroke="Black" StrokeThickness="3">
+                <Label Text="Fila de abajo"/>
+            </Border>
+        </VerticalStackLayout>
 
+        <Border Stroke="Black" StrokeThickness="3" Margin="5" Grid.Row="1">
+            <ScrollView>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <FlexLayout Wrap="Wrap" Grid.Column="0" Grid.RowSpan="4">
+                        <Image Source="dotnet_bot.png" Margin="10"/>
+                        <Image Source="dotnet_bot.png" Margin="10"/>
+                        <Image Source="dotnet_bot.png" Margin="10"/>
+                    </FlexLayout>
+
+                    <Border Stroke="Black" StrokeThickness="3" Margin="10" Grid.Column="1" Grid.Row="0">
+                        <Label Text="Arriba" BackgroundColor="Violet"/>
+                    </Border>
+
+                    <Border Stroke="Black" StrokeThickness="3" Margin="10" Grid.Column="1" Grid.Row="1">
+                        <Label Text="Medio-Arriba" BackgroundColor="Violet"/>
+                    </Border>
+
+                    <Border Stroke="Black" StrokeThickness="3" Margin="10" Grid.Column="1" Grid.Row="2">
+                        <Label Text="Medio-Abajo" BackgroundColor="Violet"/>
+                    </Border>
+
+                    <Border Stroke="Black" StrokeThickness="3" Margin="10" Grid.Column="1" Grid.Row="3">
+                        <Label Text="Abajo" BackgroundColor="Violet"/>
+                    </Border>
+
+                </Grid>
+
+            </ScrollView>
+
+        </Border>
+        <Border Stroke="Black" StrokeThickness="3" Margin="5" Grid.Row="2">
+            <Label Text=""/>
+        </Border>
+    </Grid>
 </ContentPage>
