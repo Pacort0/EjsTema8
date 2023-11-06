@@ -24,7 +24,13 @@ namespace Ejercicio05_Tema8.DAL
                 new clsPersona() {Id = 8, Nombre = "María", Apellidos = "Ronaldo"},
                 new clsPersona() {Id = 9, Nombre = "Amapola", Apellidos = "Rakitic"},
                 new clsPersona() {Id = 10, Nombre = "Rocío", Apellidos = "Duncal"},
-                new clsPersona() {Id = 11, Nombre = "Pedro", Apellidos = " Rodríguez"}
+                new clsPersona() {Id = 11, Nombre = "Pedro", Apellidos = "Rodríguez"},
+                new clsPersona() {Id = 12, Nombre = "Javier", Apellidos = "Martínez"},
+                new clsPersona() {Id = 13, Nombre = "Víctor", Apellidos = "Velázquez"},
+                new clsPersona() {Id = 14, Nombre = "Ignacio", Apellidos = "Ortiz"},
+                new clsPersona() {Id = 15, Nombre = "Ignacio", Apellidos = "Llorente"},
+                new clsPersona() {Id = 16, Nombre = "Lucía", Apellidos = "de Castro"},
+                new clsPersona() {Id = 17, Nombre = "Granada", Apellidos = "Bombita"}
             };
 
             return listadoCompletoPersonas;
