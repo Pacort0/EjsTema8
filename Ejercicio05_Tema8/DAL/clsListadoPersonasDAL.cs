@@ -10,6 +10,10 @@ namespace Ejercicio05_Tema8.DAL
 {
     public static class clsListadoPersonasDAL
     {
+        /// <summary>
+        /// Función que nos devuelve un listado completo de personas
+        /// </summary>
+        /// <returns>Listado de personas con id, nombre y apellidos</returns>
         public static ObservableCollection<clsPersona> getListadoCompletoPersonas()
         {
             ObservableCollection<clsPersona> listadoCompletoPersonas = new ObservableCollection<clsPersona>()
