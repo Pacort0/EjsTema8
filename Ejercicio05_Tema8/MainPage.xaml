@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio05_Tema8.MainPage"
+             BackgroundColor="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "50"></RowDefinition>
+            <RowDefinition Height = "*" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border BackgroundColor="Red"  Grid.Row="0">
+            <Label Text="Primary" BackgroundColor="Red" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"></Label>
+        </Border>
+        <ListView x:Name="PersonasListView" ItemsSource="{Binding Personas}" Grid.Row="1" HorizontalOptions="CenterAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="60"></ColumnDefinition>
+                                <ColumnDefinition Width="60"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border Stroke="Green" StrokeThickness="2" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1">
+                                <Label  Text="{Binding Id}" Margin="10" TextColor="Black" FontAttributes="Bold"></Label>
+                            </Border>
+                            <Label Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Text="{Binding NombreCompleto}" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"></Label>   
+                            <Image Source="dotnet_bot.png" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Aspect="AspectFit"/>
+                            <ImageButton Source="pencil.png" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"  Aspect="AspectFit"/>
+                            <ImageButton Source="trash_can.png" Grid.Column="3" Grid.Row="0" Grid.RowSpan="2"  Aspect="AspectFit"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ImageButton Source="plus.png" Grid.Row="1" BorderColor="#2b3c3c" BorderWidth="1" BackgroundColor="LightSalmon" AbsoluteLayout.LayoutFlags="PositionProportional"
+                     HorizontalOptions="End" WidthRequest="70" HeightRequest="70" Margin="0,0,140,52" VerticalOptions="End"/>
+    </Grid>
+
+</ContentPage>
