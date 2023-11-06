@@ -49,9 +49,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\disco_guardar.png" />
 	  <None Remove="Resources\Images\foto_header.jpg" />
 	  <None Remove="Resources\Images\plus.svg" />
-	  <None Remove="Resources\Images\trash_can.svg" />
+	  <None Remove="Resources\Images\trash_can.png" />
 	</ItemGroup>
 
 	<ItemGroup>

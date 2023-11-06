@@ -23,14 +23,15 @@
             </HorizontalStackLayout>
             <HorizontalStackLayout Margin="5">
                 <Label Text="Fecha de nacimiento: "></Label>
-                <Entry x:Name="EntryFechaNac" TextChanged="EntryFechaNac_TextChanged" WidthRequest="200" Placeholder="Fecha de nacimiento"/>
+                <Entry x:Name="EntryFechaNac" TextChanged="EntryFechaNac_TextChanged" WidthRequest="200" Placeholder="dd/mm/yyyy"/>
+            </HorizontalStackLayout>
+            <Label x:Name="Estado"></Label>
+            <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Center" Margin="0,50,0,0">
+                <ImageButton x:Name="Guardar" Source="disco_guardar.png" Aspect="AspectFit" HeightRequest="50" Margin="0,0,5,0" Pressed="Guardar_Pressed"/>
+                <ImageButton x:Name="Añadir" Source="plus.png" Aspect="AspectFit" HeightRequest="50" Margin="5,0,5,0" Pressed="Añadir_Pressed"/>
+                <ImageButton x:Name="Eliminar" Source="trash_can.png" Aspect="AspectFit" HeightRequest="60" Margin="5,0,0,0" Pressed="Eliminar_Pressed"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
-        <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Center">
-            <ImageButton x:Name="Guardar" Source="plus.png" Aspect="AspectFit" HeightRequest="100"/>
-            <ImageButton x:Name="Añadir" />
-            <ImageButton x:Name="Eliminar" Source="trash_can.png" Aspect="AspectFit" HeightRequest="100"/>
-        </HorizontalStackLayout>
     </Grid>
 
 </ContentPage>

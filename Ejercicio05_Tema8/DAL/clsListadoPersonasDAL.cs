@@ -19,7 +19,7 @@ namespace Ejercicio05_Tema8.DAL
             ObservableCollection<clsPersona> listadoCompletoPersonas = new ObservableCollection<clsPersona>()
             {
                 new clsPersona() {Id = 1, Nombre = "Paco", Apellidos = "Rodríguez"},
-                new clsPersona() { Id = 2, Nombre = "Miguel", Apellidos = "Cabezón"},
+                new clsPersona() {Id = 2, Nombre = "Miguel", Apellidos = "Cabezón"},
                 new clsPersona() {Id = 3, Nombre = "Luisa", Apellidos = "Gameplays"},
                 new clsPersona() {Id = 4, Nombre = "Francisco Javier", Apellidos = "Octogenario"},
                 new clsPersona() {Id = 5, Nombre = "Isa", Apellidos = "K"},
@@ -34,7 +34,8 @@ namespace Ejercicio05_Tema8.DAL
                 new clsPersona() {Id = 14, Nombre = "Ignacio", Apellidos = "Ortiz"},
                 new clsPersona() {Id = 15, Nombre = "Ignacio", Apellidos = "Llorente"},
                 new clsPersona() {Id = 16, Nombre = "Lucía", Apellidos = "de Castro"},
-                new clsPersona() {Id = 17, Nombre = "Granada", Apellidos = "Bombita"}
+                new clsPersona() {Id = 17, Nombre = "Granada", Apellidos = "Bombita"},
+                new clsPersona() {Id = 18, Nombre = "Martita", Apellidos = "Flores"}
             };
 
             return listadoCompletoPersonas;

@@ -7,7 +7,9 @@ namespace Ejercicio05_Tema8
 {
     public partial class MainPage : ContentPage
     {
-        public ObservableCollection<clsPersona> Personas {  get { return clsListadoPersonasDAL.getListadoCompletoPersonas(); } }
+        public ObservableCollection<clsPersona> Personas {  
+            get { return clsListadoPersonasDAL.getListadoCompletoPersonas(); } 
+        }
         public MainPage()
         {
             InitializeComponent();
