@@ -15,15 +15,18 @@
             <Label Text="FORMULARIO" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" Margin="0,0,0,20"></Label>
             <HorizontalStackLayout Margin="5">
                 <Label Text="Nombre: "></Label>
-                <Entry x:Name="EntryNombre" TextChanged="EntryNombre_TextChanged" WidthRequest="200" Placeholder="Nombre"/>
+                <Entry x:Name="EntryNombre" WidthRequest="200" Placeholder="Nombre" Keyboard="Text"/>
+                <Label x:Name="EstadoNombre"></Label>
             </HorizontalStackLayout>
             <HorizontalStackLayout Margin="5">
                 <Label Text="Apellidos: "></Label>
-                <Entry x:Name="EntryApellidos" TextChanged="EntryApellidos_TextChanged" WidthRequest="200" Placeholder="Apellidos"/>
+                <Entry x:Name="EntryApellidos" WidthRequest="200" Placeholder="Apellidos" Keyboard="Text"/>
+                <Label x:Name="EstadoApellido"></Label>
             </HorizontalStackLayout>
             <HorizontalStackLayout Margin="5">
                 <Label Text="Fecha de nacimiento: "></Label>
-                <Entry x:Name="EntryFechaNac" TextChanged="EntryFechaNac_TextChanged" WidthRequest="200" Placeholder="dd/mm/yyyy"/>
+                <DatePicker x:Name ="DateFechaNac"></DatePicker>
+                <Label x:Name="EstadoFecha"></Label>
             </HorizontalStackLayout>
             <Label x:Name="Estado"></Label>
             <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Center" Margin="0,50,0,0">

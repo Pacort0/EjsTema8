@@ -8,75 +8,61 @@ namespace Ejercicio06_Tema8
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        private void EntryNombre_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void EntryApellidos_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void EntryFechaNac_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            DateFechaNac.MaximumDate = DateTime.Today;
         }
 
         private void Guardar_Pressed(object sender, EventArgs e)
         {
-            if (!DateGood())
+            bool formularioMal = false;
+
+            if (EntryNombre.Text.Length <= 0)
             {
-                Estado.Text = "Datos introducidos incorrectos";
-                Estado.TextColor = Colors.Red;
+                EstadoNombre.Text = "Nombre incorrecto";
+                EstadoNombre.TextColor = Colors.Red;
+                formularioMal = true;
+            } 
+            if (EntryApellidos.Text.Length <= 0)
+            {
+                EstadoApellido.Text = "Apellidos incorrectos";
+                EstadoApellido.TextColor = Colors.Red;
+                formularioMal = true;
+
+            }
+            if (DateTime.Now.Year - DateFechaNac.Date.Year < 12)
+            {
+                EstadoFecha.Text = "Debes ser mayor de 12 años";
+                EstadoFecha.TextColor = Colors.Red;
+                formularioMal = true;
+            }
+
+            if (!formularioMal)
+            {
+                Estado.Text = "Usuario registrado";
+                Estado.TextColor = Colors.Green;
             } else
             {
-                Estado.Text = "Usuario Registrado";
-                Estado.TextColor = Colors.Green;
+                Estado.Text = "Datos introducidos inválidos";
+                Estado.TextColor = Colors.Red;
             }
         }
 
         private void Añadir_Pressed(object sender, EventArgs e)
         {
-            if (EntryNombre.Text.Length > 0)
-            {
-                EntryNombre.Text = "";
-            }
-            if (EntryApellidos.Text.Length > 0) 
-            {
-                EntryApellidos.Text = "";
-            } 
-            if (EntryFechaNac.Text.Length > 0) {
-                EntryFechaNac.Text = "";
-            }
+            DateTime fechaActual = DateTime.Now;
+
+            EntryNombre.Text = "";
+            EntryApellidos.Text = "";
+            DateFechaNac.Date = fechaActual;
         }
 
         private void Eliminar_Pressed(object sender, EventArgs e)
         {
 
         }
-        private bool DateGood()
+
+        private void DateFechaNac_DateSelected(object sender, DateChangedEventArgs e)
         {
-            bool isGoodDate = true;
-            string fechaNac = EntryFechaNac.Text;
-            string[] fechas = fechaNac.Split("/");
 
-            if (Int32.Parse(fechas[0]) < 0 && Int32.Parse(fechas[0]) > 31)
-            {
-                isGoodDate = false;
-            }
-            else if (Int32.Parse(fechas[1]) < 0 && Int32.Parse(fechas[1]) > 12)
-            {
-                isGoodDate = false;
-            }
-            else if (Int32.Parse(fechas[2]) > 0)
-            {
-                isGoodDate = false;
-            }
-
-            return isGoodDate;
         }
     }
 }
