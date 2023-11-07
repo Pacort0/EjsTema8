@@ -5,39 +5,40 @@ namespace Ejercicio06_Tema8
 {
     public partial class MainPage : ContentPage
     {
+        bool nombreCambiado = false;
+        bool apellidosCambiados = false;
         public MainPage()
         {
             InitializeComponent();
             DateFechaNac.MaximumDate = DateTime.Today;
         }
 
+        private void EntryNombre_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            nombreCambiado = true;  
+        }
+
+        private void EntryApellidos_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            apellidosCambiados=true;
+        }
+
         private void Guardar_Pressed(object sender, EventArgs e)
         {
-            bool formularioMal = false;
+            bool fechaBien = true;
 
-            if (EntryNombre.Text.Length <= 0)
-            {
-                EstadoNombre.Text = "Nombre incorrecto";
-                EstadoNombre.TextColor = Colors.Red;
-                formularioMal = true;
-            } 
-            if (EntryApellidos.Text.Length <= 0)
-            {
-                EstadoApellido.Text = "Apellidos incorrectos";
-                EstadoApellido.TextColor = Colors.Red;
-                formularioMal = true;
-
-            }
             if (DateTime.Now.Year - DateFechaNac.Date.Year < 12)
             {
                 EstadoFecha.Text = "Debes ser mayor de 12 años";
                 EstadoFecha.TextColor = Colors.Red;
-                formularioMal = true;
+                fechaBien = false;
+            } else {
+                EstadoFecha.Text = "";
             }
 
-            if (!formularioMal)
+            if (compruebaNombre() && compruebaApellidos() && fechaBien)
             {
-                Estado.Text = "Usuario registrado";
+                Estado.Text = "Usuario registrado con éxito";
                 Estado.TextColor = Colors.Green;
             } else
             {
@@ -63,6 +64,38 @@ namespace Ejercicio06_Tema8
         private void DateFechaNac_DateSelected(object sender, DateChangedEventArgs e)
         {
 
+        }
+
+        private bool compruebaNombre()
+        {
+            bool formularioBien = true;
+
+            if (EntryNombre.Text == null || !nombreCambiado || EntryNombre.Text == "")
+            {
+                EstadoNombre.Text = "Nombre incorrecto";
+                EstadoNombre.TextColor = Colors.Red;
+                formularioBien = false;
+            }
+            else
+            {
+                EstadoNombre.Text = "";
+            }
+            return formularioBien;
+        }
+        private bool compruebaApellidos()
+        {
+            bool formularioBien = true;
+            if (EntryApellidos == null || !apellidosCambiados || EntryApellidos.Text == "")
+            {
+                EstadoApellidos.Text = "Apellidos incorrectos";
+                EstadoApellidos.TextColor = Colors.Red;
+                formularioBien = false;
+            }
+            else
+            {
+                EstadoApellidos.Text = "";
+            }
+            return formularioBien;
         }
     }
 }

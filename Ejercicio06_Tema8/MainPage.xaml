@@ -11,24 +11,30 @@
         </Grid.RowDefinitions>
 
         <Image Source="foto_header.jpg" Aspect="Fill" Grid.Row="0" HeightRequest="100"/>
+        
         <VerticalStackLayout Grid.Row="1" HorizontalOptions="Center">
             <Label Text="FORMULARIO" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" Margin="0,0,0,20"></Label>
+            
             <HorizontalStackLayout Margin="5">
                 <Label Text="Nombre: "></Label>
-                <Entry x:Name="EntryNombre" WidthRequest="200" Placeholder="Nombre" Keyboard="Text"/>
+                <Entry x:Name="EntryNombre" WidthRequest="200" Placeholder="Nombre" Keyboard="Text" TextChanged="EntryNombre_TextChanged"/>
                 <Label x:Name="EstadoNombre"></Label>
             </HorizontalStackLayout>
+            
             <HorizontalStackLayout Margin="5">
                 <Label Text="Apellidos: "></Label>
-                <Entry x:Name="EntryApellidos" WidthRequest="200" Placeholder="Apellidos" Keyboard="Text"/>
-                <Label x:Name="EstadoApellido"></Label>
+                <Entry x:Name="EntryApellidos" WidthRequest="200" Placeholder="Apellidos" Keyboard="Text" TextChanged="EntryApellidos_TextChanged"/>
+                <Label x:Name="EstadoApellidos"></Label>
             </HorizontalStackLayout>
+            
             <HorizontalStackLayout Margin="5">
                 <Label Text="Fecha de nacimiento: "></Label>
                 <DatePicker x:Name ="DateFechaNac"></DatePicker>
                 <Label x:Name="EstadoFecha"></Label>
             </HorizontalStackLayout>
+            
             <Label x:Name="Estado"></Label>
+            
             <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Center" Margin="0,50,0,0">
                 <ImageButton x:Name="Guardar" Source="disco_guardar.png" Aspect="AspectFit" HeightRequest="50" Margin="0,0,5,0" Pressed="Guardar_Pressed"/>
                 <ImageButton x:Name="Añadir" Source="plus.png" Aspect="AspectFit" HeightRequest="50" Margin="5,0,5,0" Pressed="Añadir_Pressed"/>
