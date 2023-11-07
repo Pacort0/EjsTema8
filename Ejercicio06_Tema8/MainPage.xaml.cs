@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.Maui.Graphics.Text;
+using System.Diagnostics;
 
 namespace Ejercicio06_Tema8
 {
@@ -54,11 +55,23 @@ namespace Ejercicio06_Tema8
             EntryNombre.Text = "";
             EntryApellidos.Text = "";
             DateFechaNac.Date = fechaActual;
+
+            Estado.Text = "";
         }
 
-        private void Eliminar_Pressed(object sender, EventArgs e)
+        private async void Eliminar_Pressed(object sender, EventArgs e)
         {
+            bool seguro = await DisplayAlert("¿Seguro?", "Estás a punto de borrar los datos del anterior usuario, ¿estás seguro?", "Sí", "No");
+            Debug.WriteLine(seguro);
 
+            if (seguro)
+            {
+                EntryNombre.Text = "";
+                EntryApellidos.Text = "";
+                DateFechaNac.Date = DateTime.Today;
+                Estado.Text = "Datos eliminados correctamente";
+                Estado.TextColor = Colors.Green;
+            }
         }
 
         private void DateFechaNac_DateSelected(object sender, DateChangedEventArgs e)
