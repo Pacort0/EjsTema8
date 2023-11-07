@@ -68,34 +68,34 @@ namespace Ejercicio06_Tema8
 
         private bool compruebaNombre()
         {
-            bool formularioBien = true;
+            bool nombreBien = true;
 
             if (EntryNombre.Text == null || !nombreCambiado || EntryNombre.Text == "")
             {
                 EstadoNombre.Text = "Nombre incorrecto";
                 EstadoNombre.TextColor = Colors.Red;
-                formularioBien = false;
+                nombreBien = false;
             }
             else
             {
                 EstadoNombre.Text = "";
             }
-            return formularioBien;
+            return nombreBien;
         }
         private bool compruebaApellidos()
         {
-            bool formularioBien = true;
-            if (EntryApellidos == null || !apellidosCambiados || EntryApellidos.Text == "")
+            bool apellidosBien = true;
+            if (EntryApellidos.Text == null || !apellidosCambiados || EntryApellidos.Text == "")
             {
                 EstadoApellidos.Text = "Apellidos incorrectos";
                 EstadoApellidos.TextColor = Colors.Red;
-                formularioBien = false;
+                apellidosBien = false;
             }
             else
             {
                 EstadoApellidos.Text = "";
             }
-            return formularioBien;
+            return apellidosBien;
         }
     }
 }
